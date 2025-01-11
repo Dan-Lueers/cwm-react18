@@ -3,6 +3,7 @@ import Alert from './components/Alert';
 import Button from './components/Button';
 import ListGroup from './components/ListGroup';
 import { BsFillCalendarFill } from 'react-icons/bs';
+import Like from './components/Like/Like';
 
 function App() {
   const [alertVisibility, setAlertVisibility] = useState(false);
@@ -16,6 +17,9 @@ function App() {
 
   return (
     <div>
+      <Like onClick={() => console.log('Like button is clicked')} />
+      <p></p>
+      <p></p>
       <BsFillCalendarFill color='red' size='80' />
       <p></p>
       {alertVisibility && (
