@@ -1,24 +1,30 @@
+import { useState } from 'react';
 import Alert from './components/Alert';
 import Button from './components/Button';
 import ListGroup from './components/ListGroup';
 
 function App() {
+  const [alertVisibility, setAlertVisibility] = useState(false);
   const items = ['New York', 'San Francisco', 'Tokyo', 'Paris', 'Zurich'];
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
   const handleClick = () => {
-    console.log('button clicked');
+    setAlertVisibility(true);
   };
+
   return (
     <div>
+      {alertVisibility && (
+        <Alert onClose={() => setAlertVisibility(false)}>
+          Hello world <p>another parapgrahp of text</p>
+          <h2>and some headings</h2>
+        </Alert>
+      )}
       <Button color='danger' onClick={handleClick}>
         Wicked Button
       </Button>
-      <Alert>
-        Hello world <p>another parapgrahp of text</p>
-        <h2>and some headings</h2>
-      </Alert>
+
       <ListGroup
         items={items}
         heading='Cities'
