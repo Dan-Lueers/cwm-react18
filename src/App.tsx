@@ -24,7 +24,7 @@ function App() {
           <h2>and some headings</h2>
         </Alert>
       )}
-      <Button color='danger' onClick={handleClick}>
+      <Button color='primary' onClick={handleClick}>
         Wicked Button
       </Button>
 
