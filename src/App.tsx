@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Alert from './components/Alert';
 import Button from './components/Button';
 import ListGroup from './components/ListGroup';
+import { BsFillCalendarFill } from 'react-icons/bs';
 
 function App() {
   const [alertVisibility, setAlertVisibility] = useState(false);
@@ -15,6 +16,8 @@ function App() {
 
   return (
     <div>
+      <BsFillCalendarFill color='red' size='80' />
+      <p></p>
       {alertVisibility && (
         <Alert onClose={() => setAlertVisibility(false)}>
           Hello world <p>another parapgrahp of text</p>
