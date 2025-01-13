@@ -6,6 +6,7 @@ import { BsFillCalendarFill } from 'react-icons/bs';
 import Like from './components/Like/Like';
 import Game from './components/Game/Game';
 import ExpandableText from './components/ExpandableText/ExpandableText';
+import ExpenseTracker from './components/ExpenseTracker/ExpenseTracker';
 
 function App() {
   const [alertVisibility, setAlertVisibility] = useState(false);
@@ -19,6 +20,9 @@ function App() {
 
   return (
     <div>
+      <ExpenseTracker />
+      <p></p>
+      <p></p>
       <ExpandableText>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
