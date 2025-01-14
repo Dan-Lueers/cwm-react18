@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import Button from './Button';
 
 interface Props {
   items: string[];
   heading: string;
   onSelectItem: (item: string) => void;
+  onDeleteItem?: (item: string) => void;
 }
 
-function ListGroup({ items, heading, onSelectItem }: Props) {
+function ListGroup({ items, heading, onSelectItem, onDeleteItem }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   const handleClick = (index: number) => {
@@ -22,7 +24,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
             className={
               index === selectedIndex
                 ? 'list-group-item active'
-                : 'list-group-item'
+                : 'list-group-item '
             }
             key={item}
             onClick={() => {
@@ -31,6 +33,14 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
             }}
           >
             {item}
+            <Button
+              color='danger'
+              onClick={() => {
+                onDeleteItem!(item);
+              }}
+            >
+              Delete
+            </Button>
           </li>
         ))}
       </ul>
